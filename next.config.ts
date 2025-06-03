@@ -20,10 +20,10 @@ const nextConfig: NextConfig = {
         hostname: "vmware.gallerycdn.vsassets.io",
       },
     ],
-    unoptimized: process.env.NODE_ENV === "development",
   },
   reactStrictMode: true,
-  swcMinify: true,
+  // Remove swcMinify completely
+  output: "standalone", // Keep this if you need standalone output
 };
 
 export default nextConfig;
