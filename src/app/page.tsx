@@ -18,7 +18,7 @@ const Card = ({
   className?: string;
 }) => (
   <div
-    className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow ${className}`}
+    className={`p-6 rounded-lg ${className}`}
   >
     {children}
   </div>
@@ -116,32 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-16">
-        <SectionHeader title="About Me" />
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg text-gray-600 mb-8">
-            I&apos;m a passionate developer with a focus on building modern,
-            scalable systems. I specialize in DevOps practices, cloud
-            technologies, and creating efficient development workflows.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Link
-              href="/about"
-              className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              My Story
-            </Link>
-            <Link
-              href="/contact"
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Contact Me
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Education Section */}
       <section className="py-16">
         <SectionHeader title="Education" />
@@ -167,7 +141,7 @@ export default function Home() {
       <section className="py-16">
         <SectionHeader title="Job Preferences" />
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-          <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+          <div className="relative aspect-video rounded-lg overflow-hidden">
             <Image
               src="https://www.rupp.edu.kh/fe/factor4.0/images/img_stem_building.jpg"
               alt="Job Preferences"
@@ -186,7 +160,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Get in Touch
             </Link>

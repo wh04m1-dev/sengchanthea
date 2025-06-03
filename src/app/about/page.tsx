@@ -67,7 +67,7 @@ const CURRENT_JOB = {
 
 // Reusable components
 const TechCard = ({ tech }: { tech: (typeof TECH_STACK)[0] }) => (
-  <div className="group flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 h-full border border-gray-100 hover:border-blue-200">
+  <div className="group flex flex-col items-center p-6 rounded-xl transition-all duration-300 h-full border">
     <div className="w-20 h-20 relative mb-4">
       <Image
         src={tech.imgSrc}
@@ -85,9 +85,9 @@ const TechCard = ({ tech }: { tech: (typeof TECH_STACK)[0] }) => (
 
 const CurrentJobSection = () => (
   <section className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-xl overflow-hidden">
       <div className="p-8 md:p-10 order-2 md:order-1">
-        <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">
+        <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4">
           CURRENT POSITION
         </span>
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -128,7 +128,7 @@ const CurrentJobSection = () => (
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent md:bg-gradient-to-l" />
+        <div className="absolute inset-0 from-white via-transparent to-transparent" />
       </div>
     </div>
   </section>
@@ -139,8 +139,8 @@ const TechStackSection = () => (
     <div className="text-center mb-12">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">My Tech Stack</h2>
       <p className="text-gray-600 max-w-2xl mx-auto">
-        Technologies I&apos;ve mastered and use regularly to build robust, scalable
-        applications
+        Technologies I&apos;ve mastered and use regularly to build robust,
+        scalable applications
       </p>
     </div>
 
@@ -174,25 +174,12 @@ const TechStackSection = () => (
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <button
-        className="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors"
-        aria-label="Previous technology"
-      >
-        &lt;
-      </button>
-      <button
-        className="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors"
-        aria-label="Next technology"
-      >
-        &gt;
-      </button>
     </div>
   </section>
 );
 
 const Disclaimer = () => (
-  <section className="py-8 text-center bg-gray-50">
+  <section className="py-8 text-center">
     <div className="container mx-auto px-4">
       <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto">
         This portfolio is for demonstration purposes only. All projects and
@@ -205,7 +192,7 @@ const Disclaimer = () => (
 
 export default function TechStacks() {
   return (
-    <div className="space-y-16 py-12 bg-gray-50">
+    <div className="space-y-16 py-12">
       <CurrentJobSection />
       <TechStackSection />
       <Disclaimer />

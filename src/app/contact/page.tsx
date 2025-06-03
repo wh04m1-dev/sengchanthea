@@ -48,7 +48,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-white py-12">
+    <main className="py-12">
       <section className="container mx-auto px-4 lg:px-24 flex flex-col lg:flex-row gap-12">
         {/* Left side: contact details */}
         <div className="flex-1 text-gray-700 space-y-6">
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 href="mailto:hi@sokvatharalin.com"
                 className="text-blue-600 hover:underline"
               >
-                hi@sokvatharalin.com
+                sengchanthea@gmaiil.com
               </a>
             </div>
 
@@ -78,13 +78,13 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                Sokvathara Lin
+                Sok
               </a>
             </div>
 
             <div className="flex items-center gap-3">
               <FaTelegram className="text-blue-600 text-xl" />
-              <span>@Lex</span>
+              <span>@osja</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -95,7 +95,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                sokvatharalin
+                sok
               </a>
             </div>
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition disabled:opacity-70 disabled:cursor-not-allowed"
+                className="font-semibold py-3 px-8 rounded-lg transition disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>

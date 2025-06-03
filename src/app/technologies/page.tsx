@@ -52,7 +52,7 @@ const TechCard = ({ tech }: { tech: { name: string; imgSrc: string } }) => (
         fill
         className="object-contain"
         sizes="64px"
-        priority={tech.name === "Next.js"} // Prioritize loading main tech
+        priority={tech.name === "Next.js"}
       />
     </div>
     <span className="text-gray-800 font-medium">{tech.name}</span>
@@ -61,7 +61,7 @@ const TechCard = ({ tech }: { tech: { name: string; imgSrc: string } }) => (
 
 const CurrentJobSection = () => (
   <section className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-xl shadow-lg overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-xl overflow-hidden">
       <div className="p-8 md:p-10">
         <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">
           CURRENT POSITION
