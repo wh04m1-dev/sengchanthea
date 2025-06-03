@@ -53,7 +53,10 @@ export default function ContactPage() {
         {/* Left side: contact details */}
         <div className="flex-1 text-gray-700 space-y-6">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Get in Touch
+            Got something to say? You can contact me! 
+            Contact Page Don&apos;t want to
+            fill out your personal information? Feel free to reach out to me on
+            social media instead.
           </h1>
 
           <div className="space-y-4">

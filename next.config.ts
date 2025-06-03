@@ -2,14 +2,28 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
-      "image.freshnewsasia.com",
-      "www.rupp.edu.kh",
-      "d1.awsstatic.com",
-      "vmware.gallerycdn.vsassets.io",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "image.freshnewsasia.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.rupp.edu.kh",
+      },
+      {
+        protocol: "https",
+        hostname: "d1.awsstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "vmware.gallerycdn.vsassets.io",
+      },
     ],
-    unoptimized: true,
+    unoptimized: process.env.NODE_ENV === "development",
   },
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 export default nextConfig;
