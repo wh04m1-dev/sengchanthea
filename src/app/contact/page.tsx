@@ -31,7 +31,6 @@ export default function ContactPage() {
     <main className="min-h-[calc(100vh-200px)] flex items-center py-12 md:py-24">
       <section className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-12 items-start p-8">
-
           <div className="lg:w-1/2">
             <h5 className="text-xl font-medium text-gray-500 mb-2">
               You want to say something?
@@ -52,7 +51,8 @@ export default function ContactPage() {
             </h2>
             <div className="space-y-4">
               {contacts.map((contact, index) => {
-                const IconComponent = iconComponents[contact.iconName as keyof IconComponents];
+                const IconComponent =
+                  iconComponents[contact.iconName as keyof IconComponents];
                 return (
                   <div
                     key={index}

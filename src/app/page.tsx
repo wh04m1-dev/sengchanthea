@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { capabilities } from '@/data/capabilities'; 
 
 interface EducationItem {
   description: string;
@@ -19,32 +18,6 @@ const Card = ({
   children: React.ReactNode;
   className?: string;
 }) => <div className={`p-6 rounded-lg ${className}`}>{children}</div>;
-
-const IconCard = ({
-  icon,
-  title,
-  description,
-  alt,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-  alt: string;
-}) => (
-  <Card className="flex flex-col h-full">
-    <div className="mb-4">
-      <Image
-        src={icon}
-        alt={alt}
-        width={40}
-        height={40}
-        className="object-contain"
-      />
-    </div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="">{description}</p>
-  </Card>
-);
 
 export default function Home() {
   const education: EducationItem[] = [
@@ -115,19 +88,6 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex justify-center">
-            <div className="w-full max-w-2xl flex flex-col gap-6">
-              {capabilities.map((cap, index) => (
-                <IconCard
-                  key={index}
-                  icon={cap.icon}
-                  title={cap.title}
-                  description={cap.description}
-                  alt={cap.alt}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </section>
     </main>

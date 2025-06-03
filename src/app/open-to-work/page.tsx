@@ -1,76 +1,108 @@
 export default function OpenToWork() {
   return (
     <section className="container mx-auto px-4 lg:px-24 max-w-4xl">
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-center">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
         Open to Work
       </h1>
 
-      <p className="mb-4">
-        I’m 27 years old, a versatile{" "}
-        <span className="font-semibold">Software Engineer</span>,
-        <span className="font-semibold"> Cloud Engineer (AWS)</span>, and
-        <span className="font-semibold"> DevOps Engineer</span>. I am highly
-        perceptive and imaginative, seeking inspiration in every moment.
-        Leveraging a rich background from working with tech companies, research
-        labs, universities, dynamic startups, telecom, and banks—it&apos;s all
-        about solving business problems, delivering design, transformative
-        features, MVPs, POCs, and full-scale productions.
-      </p>
+      <div className="space-y-8">
+        <div>
+          <p className="mb-4 text-lg leading-relaxed">
+            I&apos;m a{" "}
+            <span className="font-semibold">Spring Boot Specialist</span> and{" "}
+            <span className="font-semibold">DevOps Engineer</span> focused on
+            building robust business logic with clean architecture (MVC,
+            Microservices) and automating delivery pipelines. I architect
+            systems where software engineering meets operational excellence.
+          </p>
+        </div>
 
-      <div className="mb-4">
-        <h2 className="text-xl font-semibold text-gray-900 mb-1">
-          Job titles:
-        </h2>
-        <p className="text-gray-700">
-          Software Engineer (Backend) · Cloud Engineer (AWS) · DevOps Engineer ·
-          Solutions Architect
-        </p>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-xl font-semibold mb-3 text-gray-900 border-b pb-2">
+              Backend Expertise
+            </h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Spring Boot application development</li>
+              <li>Domain-driven design & clean architecture</li>
+              <li>RESTful APIs & microservices patterns</li>
+              <li>Database optimization & transaction management</li>
+              <li>Integration with frontend & external systems</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold mb-3 text-gray-900 border-b pb-2">
+              DevOps Competencies
+            </h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>CI/CD pipeline design (Jenkins/GitHub Actions)</li>
+              <li>Infrastructure as Code (Terraform/CDK)</li>
+              <li>Container orchestration (Kubernetes/Docker)</li>
+              <li>Monitoring & observability implementation</li>
+              <li>Cloud cost optimization strategies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-xl font-semibold mb-3 text-gray-900 border-b pb-2">
+              Employment Details
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-medium">Focus:</span> Backend Systems &
+                DevOps
+              </li>
+              <li>
+                <span className="font-medium">Type:</span> Full-time
+              </li>
+              <li>
+                <span className="font-medium">Location:</span> On-site (Phnom
+                Penh) or Remote
+              </li>
+              <li>
+                <span className="font-medium">Notice:</span> 1 month
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold mb-3 text-gray-900 border-b pb-2">
+              Technical Values
+            </h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>SOLID principles in practice</li>
+              <li>Testable, maintainable code</li>
+              <li>Infrastructure as cattle, not pets</li>
+              <li>Automation-first mindset</li>
+              <li>Measurable system improvements</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-gray-900 border-b pb-2">
+            What I Deliver
+          </h2>
+          <p className="leading-relaxed">
+            As a backend engineer, I build Spring Boot applications with proper
+            layering (controller-service-repository), clean contracts, and
+            business logic that stands the test of scale. As a DevOps
+            practitioner, I eliminate manual toil through CI/CD pipelines that
+            ensure reliable deployments.
+          </p>
+          <p className="leading-relaxed mt-4">
+            I&apos;m seeking teams that value both{" "}
+            <span className="font-medium">well-architected software</span> and{" "}
+            <span className="font-medium">streamlined operations</span>. Whether
+            it&apos;s implementing new microservices or automating their
+            deployment, I focus on solutions that drive business value through
+            technical excellence.
+          </p>
+        </div>
       </div>
-
-      <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-1">Location types:</h2>
-        <p>On-site · Hybrid · Remote</p>
-        <p className="mt-1">
-          <span className="font-semibold">On-site:</span> Cambodia · Vietnam ·
-          Thailand · Malaysia · Indonesia · Singapore
-        </p>
-        <p className="mt-1">
-          <span className="font-semibold">Remote:</span> Cambodia · APAC ·
-          Europe
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-1">Start date:</h2>
-        <p>One-month notice period</p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-1">Employment types:</h2>
-        <p>Full-time</p>
-      </div>
-
-      <p className="mb-4">
-        I am based in Phnom Penh, Cambodia, and open to relocation to pursue
-        dynamic career opportunities that foster diversification, inspiration,
-        and meaningful impact. My professional ethos is driven by a passion for
-        addressing complex business challenges and delivering transformative
-        results, rather than focusing solely on routine tasks such as feature
-        development.
-      </p>
-
-      <p className="text-gray-700 mb-4">
-        I thrive in environments that demand strategic problem-solving,
-        collaboration, and relentless commitment to achieving organizational
-        objectives. Unwilling to settle in a comfort zone, I seek roles that
-        ignite momentum and align with my dedication to excellence.
-      </p>
-
-      <p className="text-gray-700 mb-6">
-        I am ready to join a forward-thinking organization where innovative
-        ideas and shared aspirations are executed with precision, turning
-        ambitious goals into reality through impactful outcomes.
-      </p>
     </section>
   );
 }
