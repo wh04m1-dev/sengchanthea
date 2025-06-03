@@ -1,12 +1,64 @@
-import { notFound } from "next/navigation";
-import ProjectSwiper from "@/components/ProjectSwiper";
-import { projects } from "@/data/projects";
+"use client";
 
-interface ProjectDetailProps {
-  params: { id: string };
+import { notFound } from "next/navigation";
+import { projects } from "@/data/projects";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// Define the expected params type
+type PageParams = {
+  id: string;
+};
+
+// Define the props type that Next.js expects
+interface PageProps {
+  params: PageParams;
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default function ProjectDetail({ params }: ProjectDetailProps) {
+function ProjectSwiper({ images, title }: { images: string[]; title: string }) {
+  return (
+    <div className="relative w-full rounded-xl overflow-hidden">
+      <Swiper
+        modules={[Autoplay, Pagination, Navigation]}
+        spaceBetween={20}
+        slidesPerView={1}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        navigation
+        loop={images.length > 1}
+        className="w-full h-full"
+      >
+        {images.map((imgUrl, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="relative w-full aspect-video">
+              <Image
+                src={imgUrl}
+                alt={`${title} - Screenshot ${idx + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 80vw"
+                priority={idx === 0}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+}
+
+export default function ProjectDetail({ params }: PageProps) {
   const project = projects.find((p) => p.id === params.id);
 
   if (!project) return notFound();
