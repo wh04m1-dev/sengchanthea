@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 
@@ -26,13 +27,10 @@ export default function Navbar() {
           className={`${
             isOpen ? "flex" : "hidden"
           } sm:flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 flex-wrap absolute sm:static top-16 left-0 right-0 bg-white sm:bg-transparent p-4 sm:p-0 items-center justify-center`}
-          onClick={handleLinkClick} // close menu on click
+          onClick={handleLinkClick}
         >
           <Link href="/project" className="hover:underline text-gray-700">
             Project
-          </Link>
-          <Link href="/technologies" className="hover:underline text-gray-700">
-            Technologies
           </Link>
           <Link href="/contact" className="hover:underline text-gray-700">
             Contact

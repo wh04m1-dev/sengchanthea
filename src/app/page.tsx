@@ -57,6 +57,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full">
+    
       <section className="w-full min-h-[50vh] flex items-center justify-center py-16 md:py-24 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">

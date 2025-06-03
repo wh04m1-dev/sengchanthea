@@ -71,12 +71,6 @@ export default function OpenToWork() {
         ideas and shared aspirations are executed with precision, turning
         ambitious goals into reality through impactful outcomes.
       </p>
-
-      <p className="text-blue-600 font-medium text-sm">
-        #SoftwareEngineer #CloudEngineer #DevOpsEngineer #Cambodia #Developer
-        #FullStackEngineer #DevOps #AWSCloud #AWS #BackendEngineer #OpenToWork
-        #SokvatharaLin
-      </p>
     </section>
   );
 }
