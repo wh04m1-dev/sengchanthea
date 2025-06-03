@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 
-// Constants for reusable data
 const TECH_STACK = [
   {
     name: "Next.js",
@@ -51,21 +50,6 @@ const TECH_STACK = [
   },
 ];
 
-const CURRENT_JOB = {
-  position: "Full Time Server Side Developer",
-  company: "Beniten Co., LTD",
-  description:
-    "Developing web and API components for company projects with a focus on scalability and performance. Responsibilities include architecture design, database optimization, and implementing security best practices.",
-  achievements: [
-    "Improved API response times by 40% through query optimization",
-    "Implemented automated testing reducing production bugs by 30%",
-    "Led migration from REST to GraphQL for core services",
-  ],
-  startDate: "September 2023",
-  endDate: "Present",
-};
-
-// Reusable components
 const TechCard = ({ tech }: { tech: (typeof TECH_STACK)[0] }) => (
   <div className="group flex flex-col items-center p-6 rounded-xl transition-all duration-300 h-full border">
     <div className="w-20 h-20 relative mb-4">
@@ -81,57 +65,6 @@ const TechCard = ({ tech }: { tech: (typeof TECH_STACK)[0] }) => (
     <h3 className="text-gray-800 font-semibold text-lg mb-1">{tech.name}</h3>
     <p className="text-gray-500 text-sm text-center">{tech.description}</p>
   </div>
-);
-
-const CurrentJobSection = () => (
-  <section className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-xl overflow-hidden">
-      <div className="p-8 md:p-10 order-2 md:order-1">
-        <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4">
-          CURRENT POSITION
-        </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          {CURRENT_JOB.position}
-        </h2>
-        <h3 className="text-xl text-green-700 font-medium mb-4">
-          {CURRENT_JOB.company}
-        </h3>
-        <p className="text-gray-600 mb-6">{CURRENT_JOB.description}</p>
-
-        <ul className="space-y-2 mb-6">
-          {CURRENT_JOB.achievements.map((achievement, index) => (
-            <li key={index} className="flex items-start">
-              <span className="text-green-500 mr-2">✓</span>
-              <span className="text-gray-600">{achievement}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500">
-            {CURRENT_JOB.startDate} - {CURRENT_JOB.endDate}
-          </span>
-          <button
-            className="text-blue-600 hover:text-blue-800 font-medium flex items-center transition-colors"
-            aria-label="Read more about current position"
-          >
-            Read more <span className="ml-1">→</span>
-          </button>
-        </div>
-      </div>
-      <div className="h-full min-h-[300px] relative order-1 md:order-2">
-        <Image
-          src="/images/server-side-development.jpg"
-          alt="Server Side Development"
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-        <div className="absolute inset-0 from-white via-transparent to-transparent" />
-      </div>
-    </div>
-  </section>
 );
 
 const TechStackSection = () => (
@@ -193,7 +126,6 @@ const Disclaimer = () => (
 export default function TechStacks() {
   return (
     <div className="space-y-16 py-12">
-      <CurrentJobSection />
       <TechStackSection />
       <Disclaimer />
     </div>

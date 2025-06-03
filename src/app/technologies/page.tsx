@@ -6,7 +6,6 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-// Constants for reusable data
 const TECH_STACK = [
   {
     name: "Next.js",
@@ -34,15 +33,6 @@ const TECH_STACK = [
   },
 ];
 
-const CURRENT_JOB = {
-  position: "Full Time Server Side Developer",
-  company: "Beniten Co., LTD",
-  description:
-    "Developing web and API components for company projects with a focus on scalability and performance.",
-  startDate: "September 2023",
-};
-
-// Reusable components
 const TechCard = ({ tech }: { tech: { name: string; imgSrc: string } }) => (
   <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full border border-gray-100">
     <div className="w-16 h-16 relative mb-4">
@@ -57,43 +47,6 @@ const TechCard = ({ tech }: { tech: { name: string; imgSrc: string } }) => (
     </div>
     <span className="text-gray-800 font-medium">{tech.name}</span>
   </div>
-);
-
-const CurrentJobSection = () => (
-  <section className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-xl overflow-hidden">
-      <div className="p-8 md:p-10">
-        <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">
-          CURRENT POSITION
-        </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          {CURRENT_JOB.position}
-        </h2>
-        <h3 className="text-xl text-green-700 font-medium mb-4">
-          {CURRENT_JOB.company}
-        </h3>
-        <p className="text-gray-600 mb-6">{CURRENT_JOB.description}</p>
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500">
-            Since <span className="font-medium">{CURRENT_JOB.startDate}</span>
-          </span>
-          <button className="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-            Read more <span className="ml-1">→</span>
-          </button>
-        </div>
-      </div>
-      <div className="h-full min-h-[300px] relative">
-        <Image
-          src="/images/server-side-development.jpg"
-          alt="Server Side Development"
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      </div>
-    </div>
-  </section>
 );
 
 const TechStackSection = () => (
@@ -143,7 +96,6 @@ const Disclaimer = () => (
 export default function TechStacks() {
   return (
     <div className="space-y-16 py-12">
-      <CurrentJobSection />
       <TechStackSection />
       <Disclaimer />
     </div>
