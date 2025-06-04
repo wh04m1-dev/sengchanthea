@@ -146,13 +146,12 @@ const HeroSection = () => {
   return (
     <section className="w-full min-h-[50vh] flex items-center justify-center py-16 md:py-24 text-center bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-          Hello, I&apos;m Seng Chanthea
-        </h1>
-        <p className="text-xl mb-8 h-8 flex justify-center">
-          <TypingEffect words={words} />
+        <p className="text-xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          Hello, I am
         </p>
-        <PrimaryButton href="/about">Learn More About Me</PrimaryButton>
+        <h3 className="text-3xl mb-8 h-8 flex justify-center">
+          <TypingEffect words={words} />
+        </h3>
       </div>
     </section>
   );
@@ -196,7 +195,9 @@ const CareerSection = () => (
                   {item.description}
                 </p>
                 <div className="text-center md:text-left">
-                  <PrimaryButton href="/contact">Let&apos;s Discuss</PrimaryButton>
+                  <PrimaryButton href="/contact">
+                    Let&apos;s Discuss
+                  </PrimaryButton>
                 </div>
               </div>
             </div>
