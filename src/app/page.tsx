@@ -1,20 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./page.module.css";
 
 type CardItem = {
   description: string;
   img: string;
-};
-
-type TypingEffectProps = {
-  words: string[];
-  typingSpeed?: number;
-  deletingSpeed?: number;
-  pauseDuration?: number;
 };
 
 type ProjectItem = {
@@ -25,7 +16,6 @@ type ProjectItem = {
   githubUrl: string;
 };
 
-// Reusable Components
 const SectionHeader = ({ title }: { title: string }) => (
   <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-start relative pb-2">
     {title}
@@ -39,11 +29,7 @@ const Card = ({
 }: {
   children: React.ReactNode;
   className?: string;
-}) => (
-  <div className={`p-6 rounded-lg bg-white shadow-md ${className}`}>
-    {children}
-  </div>
-);
+}) => <div className={`p-6 rounded-lg ${className}`}>{children}</div>;
 
 const ImageCard = ({
   src,
@@ -79,55 +65,6 @@ const PrimaryButton = ({
     {children}
   </Link>
 );
-
-const TypingEffect = ({
-  words,
-  typingSpeed = 100,
-  deletingSpeed = 50,
-  pauseDuration = 1500,
-}: TypingEffectProps) => {
-  const [currentText, setCurrentText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-
-  useEffect(() => {
-    const currentSpeed = isDeleting ? deletingSpeed : typingSpeed;
-    const currentWord = words[loopNum % words.length];
-
-    const handleTyping = () => {
-      if (isDeleting) {
-        setCurrentText(currentWord.substring(0, currentText.length - 1));
-        if (currentText === "") {
-          setIsDeleting(false);
-          setLoopNum(loopNum + 1);
-        }
-      } else {
-        setCurrentText(currentWord.substring(0, currentText.length + 1));
-        if (currentText === currentWord) {
-          setTimeout(() => setIsDeleting(true), pauseDuration);
-        }
-      }
-    };
-
-    const timer = setTimeout(handleTyping, currentSpeed);
-    return () => clearTimeout(timer);
-  }, [
-    currentText,
-    isDeleting,
-    loopNum,
-    words,
-    typingSpeed,
-    deletingSpeed,
-    pauseDuration,
-  ]);
-
-  return (
-    <span className={styles.typewriter}>
-      {currentText}
-      <span className={styles.caret}>|</span>
-    </span>
-  );
-};
 
 const educationItems: CardItem[] = [
   {
@@ -177,25 +114,43 @@ const projects: ProjectItem[] = [
 ];
 
 const HeroSection = () => {
-  const words = ["DevOps Engineer", "Software Engineer"];
-
   return (
-    <section className="w-full min-h-[50vh] flex items-center justify-center py-16 md:py-24 text-center">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-xl sm:text-5xl lg:text-6xl font-bold mb-6">
-          Hello, I am
-        </p>
-        <h3 className="text-3xl mb-8 h-8 flex justify-center">
-          <TypingEffect words={words} />
-        </h3>
+    <section className="w-full min-h-screen flex items-center justify-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="space-y-4 md:space-y-6">
+          <p className="text-lg sm:text-xl font-medium mb-2">Hi, my name is</p>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+            Seng Chanthea.
+          </h1>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            I build & deploy digital solutions.
+          </h2>
+
+          <div className="max-w-2xl">
+            <p className="text-lg sm:text-xl mt-6">
+              I&apos;m a DevOps Engineer and Software Developer specializing in
+              creating and optimizing scalable, efficient systems and
+              applications.
+            </p>
+          </div>
+
+          <div className="pt-8">
+            <a
+              href="#contact"
+              className="inline-block px-8 py-3 text-lg font-medium rounded-md transition duration-300 bg-sky-800 text-white"
+            >
+              Keep walking
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
 const EducationSection = () => (
-  <section className="w-full py-16">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section className="w-full">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader title="Education" />
       <div className="max-w-4xl mx-auto">
         {educationItems.map((edu, index) => (
@@ -345,7 +300,7 @@ const SkillsSection = () => (
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold mb-3 text-gray-900 border-b pb-2">
+            <h2 className="text-xl font-semibold mb-3 border-b pb-2">
               Technical Values
             </h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -391,11 +346,8 @@ const CareerSection = () => (
         {careerItems.map((item, index) => (
           <Card key={index}>
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-full md:w-1/2">
-                <ImageCard src={item.img} alt="Career opportunities" />
-              </div>
               <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <p className="mb-6 text-center md:text-left text-gray-700">
+                <p className="mb-6 text-center md:text-left">
                   {item.description}
                 </p>
                 <div className="text-center md:text-left">
@@ -420,9 +372,6 @@ const ContactSection = () => (
         <Card>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">
-                Contact Information
-              </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <svg
@@ -507,7 +456,6 @@ const ContactSection = () => (
   </section>
 );
 
-// Main Page
 export default function Home() {
   return (
     <main className="min-h-screen w-full">

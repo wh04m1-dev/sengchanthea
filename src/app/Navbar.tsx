@@ -11,10 +11,10 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-10">
+    <header className="sticky top-0 z-10 bg-gray-100">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between lg:px-24">
         <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-semibold">
-          S.Chanthea
+          Seng Chanthea
         </Link>
         <button
           className="sm:hidden text-2xl"
@@ -35,7 +35,7 @@ export default function Navbar() {
           <Link href="/contact" className="hover:underline text-gray-700">
             Contact
           </Link>
-          <Link href="/open-to-work" className="hover:underline text-gray-700">
+          <Link href="/open" className="hover:underline text-gray-700">
             Open
           </Link>
         </nav>

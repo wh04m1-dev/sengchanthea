@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-// import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "@/app/Navbar";
+import Footer from "@/app/Footer";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -11,7 +11,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "S.Chanthea's Portfolio",
+  title: "Seng Chanthea",
   description: "Showcasing innovative projects and skills by S.Chanthea",
 };
 
@@ -23,9 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
-        {/* <Navbar /> */}
-        {children}
-        <Footer />
+        <Navbar /> {children} <Footer />{" "}
       </body>
     </html>
   );
