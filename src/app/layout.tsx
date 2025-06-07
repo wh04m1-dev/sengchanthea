@@ -11,7 +11,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Seng Chanthea",
+  title: "CHANTHEA  | Official Website",
   description: "Showcasing innovative projects and skills by S.Chanthea",
 };
 
@@ -22,8 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>
-        <Navbar /> {children} <Footer />{" "}
+      <body className={`${roboto.variable} font-sans antialiased`}>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
