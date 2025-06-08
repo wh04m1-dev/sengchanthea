@@ -8,14 +8,14 @@ type ProjectItem = {
 
 const projects: ProjectItem[] = [
   {
-    title: "Web API",
+    title: "Microservices API with Kubernetes",
     subtitle: "Serverless TypeScript",
     description: "RESTful API via Lambda",
     tags: ["Lambda", "MySQL", "RESTful API"],
     githubUrl: "https://github.com/yourusername/web-api",
   },
   {
-    title: "Web App",
+    title: "CI/CD Pipeline Automation",
     subtitle: "Book GraphQL",
     description: "Book Management App",
     tags: ["React", "TS", "GraphQL API", "MongoDB"],
@@ -29,7 +29,7 @@ const projects: ProjectItem[] = [
     githubUrl: "https://github.com/yourusername/randevoo",
   },
   {
-    title: "UX/UI Design",
+    title: "Infrastructure as Code (IaC)",
     subtitle: "Blockchain",
     description: "Blockchain",
     tags: [],

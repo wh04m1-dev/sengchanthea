@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable} font-sans antialiased`}>
         <Navbar />
-        {children}
+          {children}
         <Footer />
       </body>
     </html>

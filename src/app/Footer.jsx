@@ -5,6 +5,9 @@ export default function Footer() {
         <p className="text-center sm:text-left">
           &copy; 2025 Chanthea Seng. All rights reserved.
         </p>
+        <p>
+          Reliable, measurable, and automated—from code to production.
+        </p>
       </div>
     </footer>
   );
